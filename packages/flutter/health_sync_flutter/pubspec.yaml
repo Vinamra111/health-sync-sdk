@@ -1,6 +1,6 @@
 name: health_sync_flutter
 description: Flutter plugin for HealthSync SDK - Universal health data integration with Health Connect support
-version: 1.0.0
+version: 1.0.2
 homepage: https://github.com/Vinamra111/health-sync-sdk/tree/main/packages/flutter/health_sync_flutter
 repository: https://github.com/Vinamra111/health-sync-sdk
 issue_tracker: https://github.com/Vinamra111/health-sync-sdk/issues
