@@ -1,0 +1,520 @@
+00:00 +0: loading C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart
+00:00 +0: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Compatibility checkCompatibility returns high for Google devices
+00:00 +1: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Compatibility checkCompatibility returns low for Xiaomi devices
+00:00 +2: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Compatibility DeviceCompatibility identifies reliable manufacturers
+00:00 +3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Compatibility DeviceCompatibility identifies problematic manufacturers
+00:00 +4: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Compatibility toString provides summary
+00:00 +5: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats recordSuccess updates statistics
+ℹ️  [2026-01-13T17:00:55.976618] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: 5, successRate: 100.0%}
+00:00 +6: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats recordFailure updates statistics
+❌ [2026-01-13T17:00:55.988813] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: test_task, reason: Network error, successRate: 0.0%}
+00:00 +7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats resetStats clears all statistics
+ℹ️  [2026-01-13T17:00:55.990954] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+❌ [2026-01-13T17:00:55.990954] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: test_task, reason: Error, successRate: 50.0%}
+ℹ️  [2026-01-13T17:00:55.990954] [INFO] [BackgroundSync] Reset background sync statistics | Metadata: {taskTag: test_task}
+00:00 +8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats success callback is invoked
+ℹ️  [2026-01-13T17:00:55.996698] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+00:00 +9: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats failure callback is invoked
+❌ [2026-01-13T17:00:55.999275] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: test_task, reason: Test error, successRate: 0.0%}
+00:00 +10: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats multiple success and failure recordings
+ℹ️  [2026-01-13T17:00:56.002209] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+ℹ️  [2026-01-13T17:00:56.003950] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+ℹ️  [2026-01-13T17:00:56.003950] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+ℹ️  [2026-01-13T17:00:56.003950] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+ℹ️  [2026-01-13T17:00:56.005456] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+ℹ️  [2026-01-13T17:00:56.005456] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+ℹ️  [2026-01-13T17:00:56.005456] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: null, successRate: 100.0%}
+❌ [2026-01-13T17:00:56.005456] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: test_task, reason: Error 0, successRate: 87.5%}
+❌ [2026-01-13T17:00:56.005456] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: test_task, reason: Error 1, successRate: 77.8%}
+❌ [2026-01-13T17:00:56.005456] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: test_task, reason: Error 2, successRate: 70.0%}
+00:00 +11: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats tracks delay in success recording
+ℹ️  [2026-01-13T17:00:56.007698] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: test_task, delay: 10, successRate: 100.0%}
+00:00 +12: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Stats getExecutionStats returns empty stats for new task
+00:00 +13: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncInfo toString provides summary
+00:00 +14: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Integration callbacks work with stats tracking
+ℹ️  [2026-01-13T17:00:56.015510] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: integration_test, delay: null, successRate: 100.0%}
+ℹ️  [2026-01-13T17:00:56.019218] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: integration_test, delay: null, successRate: 100.0%}
+❌ [2026-01-13T17:00:56.019218] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: integration_test, reason: Error 1, successRate: 66.7%}
+ℹ️  [2026-01-13T17:00:56.019218] [INFO] [BackgroundSync] Background sync succeeded | Metadata: {taskTag: integration_test, delay: null, successRate: 75.0%}
+❌ [2026-01-13T17:00:56.019218] [ERROR] [BackgroundSync] Background sync failed | Metadata: {taskTag: integration_test, reason: Error 2, successRate: 60.0%}
+00:00 +15: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_service_test.dart: BackgroundSyncService Integration compatibility recommendations match device characteristics
+00:00 +16: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats initial stats are zero
+00:00 +17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats recordSuccess updates statistics
+00:00 +18: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats recordFailure updates statistics
+00:00 +19: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats calculates success rate correctly
+00:00 +20: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats calculates average delay correctly
+00:00 +21: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats isHealthy returns true when success rate > 80%
+00:00 +22: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats isHealthy returns false when success rate <= 80%
+00:00 +23: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats appearsStuck returns true when no success for >24 hours
+00:00 +24: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats appearsStuck returns false when recent success
+00:00 +25: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats appearsStuck returns false when no executions yet
+00:00 +26: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats tracks failure reasons correctly
+00:00 +27: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats mostCommonFailureReason returns null when no failures
+00:00 +28: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats save and load persist statistics
+00:00 +29: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats load returns empty stats when no data exists
+00:00 +30: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats getReport generates formatted report
+00:00 +31: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats getReport shows stuck warning
+00:00 +31 -1: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats getReport shows stuck warning [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                                 expect
+  package:flutter_test/src/widget_tester.dart 474:18              expect
+  test\src\background_sync\background_sync_stats_test.dart 237:7  main.<fn>.<fn>
+  
+00:00 +31 -1: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats getReport shows unhealthy warning
+00:00 +31 -2: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager detects Xiaomi
+00:00 +31 -2: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats getReport shows unhealthy warning [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                                 expect
+  package:flutter_test/src/widget_tester.dart 474:18              expect
+  test\src\background_sync\background_sync_stats_test.dart 254:7  main.<fn>.<fn>
+  
+00:00 +32 -2: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats toString provides summary
+00:00 +33 -2: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats toString provides summary
+00:00 +33 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager detects OPPO
+00:00 +33 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats toString provides summary [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                                 expect
+  package:flutter_test/src/widget_tester.dart 474:18              expect
+  test\src\background_sync\background_sync_stats_test.dart 272:7  main.<fn>.<fn>
+  
+00:00 +34 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats timeSinceLastSuccess calculates duration correctly
+00:00 +35 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager detects Vivo
+00:00 +36 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats ignores delay when not provided
+00:00 +37 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats ignores delay when not provided
+00:00 +38 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager detects Realme
+00:00 +39 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats handles multiple different failure reasons
+00:00 +40 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager detects Asus
+00:00 +41 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats Edge Cases handles very large delays
+00:00 +42 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager returns false for Google
+00:00 +43 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats Edge Cases handles zero delay
+00:00 +44 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager returns false for Samsung
+00:00 +45 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats Edge Cases success rate is 100% when only successes
+00:00 +46 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo isAggressiveBatteryManager returns false for Motorola
+00:00 +47 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/background_sync_stats_test.dart: BackgroundSyncStats Edge Cases success rate is 0% when only failures
+00:00 +48 -3: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBatteryOptimizationWarning returns warning for Xiaomi
+00:00 +48 -4: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBatteryOptimizationWarning returns warning for Xiaomi [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                      expect
+  package:flutter_test/src/widget_tester.dart 474:18   expect
+  test\src\background_sync\device_info_test.dart 62:7  main.<fn>.<fn>
+  
+00:00 +48 -4: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBatteryOptimizationWarning returns warning for Huawei
+00:00 +49 -4: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBatteryOptimizationWarning returns warning for OPPO
+00:00 +50 -4: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBatteryOptimizationWarning returns null for Google
+00:00 +51 -4: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBatteryOptimizationWarning returns null for Samsung
+00:00 +52 -4: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getManufacturerSpecificInstructions returns instructions for Xiaomi
+00:00 +52 -5: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getManufacturerSpecificInstructions returns instructions for Xiaomi [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                      expect
+  package:flutter_test/src/widget_tester.dart 474:18   expect
+  test\src\background_sync\device_info_test.dart 90:7  main.<fn>.<fn>
+  
+00:00 +52 -5: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getManufacturerSpecificInstructions returns instructions for Huawei
+00:00 +53 -5: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getManufacturerSpecificInstructions returns instructions for OPPO
+00:00 +53 -6: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getManufacturerSpecificInstructions returns instructions for OPPO [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 474:18    expect
+  test\src\background_sync\device_info_test.dart 103:7  main.<fn>.<fn>
+  
+00:00 +53 -6: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getManufacturerSpecificInstructions returns generic for unknown manufacturer
+00:00 +53 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getManufacturerSpecificInstructions returns generic for unknown manufacturer [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 474:18    expect
+  test\src\background_sync\device_info_test.dart 108:7  main.<fn>.<fn>
+  
+00:00 +53 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBackgroundSyncCompatibility returns high for Google
+00:00 +54 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBackgroundSyncCompatibility returns high for Samsung
+00:00 +55 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBackgroundSyncCompatibility returns high for Motorola
+00:00 +56 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBackgroundSyncCompatibility returns low for Xiaomi
+00:00 +57 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBackgroundSyncCompatibility returns low for Huawei
+00:00 +58 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBackgroundSyncCompatibility returns low for OPPO
+00:00 +59 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getBackgroundSyncCompatibility returns medium for unknown manufacturer
+00:00 +60 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getRecommendedSyncFrequency returns 15 minutes for high compatibility
+00:00 +61 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getRecommendedSyncFrequency returns 60 minutes for low compatibility
+00:00 +62 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo getRecommendedSyncFrequency returns 30 minutes for medium compatibility
+00:00 +63 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo shouldRequireCharging returns false for high compatibility
+00:00 +64 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo shouldRequireCharging returns true for low compatibility
+00:00 +65 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo shouldRequireCharging returns false for medium compatibility
+00:00 +66 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo shouldRequireWiFi returns false for high compatibility
+00:00 +67 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo shouldRequireWiFi returns true for low compatibility
+00:00 +68 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo shouldRequireWiFi returns false for medium compatibility
+00:00 +69 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo case insensitive manufacturer detection
+00:00 +70 -7: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo manufacturer detection with extra spaces or characters
+00:00 +70 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo manufacturer detection with extra spaces or characters [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 474:18    expect
+  test\src\background_sync\device_info_test.dart 203:7  main.<fn>.<fn>
+  
+00:00 +70 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo Integration aggressive battery managers have low compatibility
+00:00 +71 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo Integration reliable manufacturers have high compatibility
+00:00 +72 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/background_sync/device_info_test.dart: DeviceInfo Integration warning is provided only for aggressive manufacturers
+00:00 +73 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictDetector Helper Methods _determineConflictType detects sync loop
+00:00 +74 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictDetector Helper Methods _calculateSeverity increases with more sources
+00:00 +75 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceInfo displayName returns appName when available
+00:00 +76 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceInfo displayName returns packageName when appName is null
+00:00 +77 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceInfo toString includes key information
+00:00 +78 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict isHighSeverity returns true when severity >= 0.7
+00:00 +79 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict isMediumSeverity returns true when 0.4 <= severity < 0.7
+00:00 +80 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict isLowSeverity returns true when severity < 0.4
+00:00 +81 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict isHighConfidence returns true when confidence >= 0.8
+00:00 +82 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict isMediumConfidence returns true when 0.5 <= confidence < 0.8
+00:00 +83 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict isLowConfidence returns true when confidence < 0.5
+00:00 +84 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict shouldWarnUser returns true for high severity + high confidence
+00:00 +85 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict shouldWarnUser returns false for high severity + low confidence
+00:00 +86 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict shouldWarnUser returns true for medium severity + high confidence
+00:00 +87 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict shouldWarnUser returns false for low severity
+00:00 +88 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict getSafeRecommendation handles legitimate multi-device
+00:00 +89 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict getSafeRecommendation handles low time overlap
+00:00 +90 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict getSafeRecommendation handles low confidence
+00:00 +91 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict getSafeRecommendation provides specific guidance for high confidence
+00:00 +92 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict getDetailedAnalysis generates comprehensive report
+00:00 +93 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: DataSourceConflict toString includes key properties
+00:00 +94 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictDetectionResult primarySource returns source with most records
+00:00 +95 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictDetectionResult secondarySources excludes primary source
+00:00 +96 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictDetectionResult highSeverityConflicts filters correctly
+00:00 +97 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictDetectionResult hasMultipleWriters returns true when >1 source
+00:00 +98 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictSummary totalConflicts counts across all types
+00:00 +99 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictSummary typesWithConflicts returns only types with conflicts
+00:00 +100 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/conflict_detection/conflict_detector_test.dart: ConflictSummary hasHighSeverityConflicts detects high severity
+00:00 +101 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate returns accurate validation for matching data
+ℹ️  [2026-01-13T17:00:56.512023] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.512023] [INFO] [AggregateReader] Validation complete: PASS | Metadata: {confidence: 100.0%, percentageDifference: 0.00%}
+00:00 +102 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate detects inaccurate aggregate
+ℹ️  [2026-01-13T17:00:56.522413] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.522413] [INFO] [AggregateReader] Validation complete: FAIL | Metadata: {confidence: 50.0%, percentageDifference: 50.00%}
+00:00 +103 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate samples large datasets
+ℹ️  [2026-01-13T17:00:56.544769] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.544769] [INFO] [AggregateReader] Validation complete: FAIL | Metadata: {confidence: 10.0%, percentageDifference: 90.00%}
+00:00 +104 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate handles empty raw data
+ℹ️  [2026-01-13T17:00:56.548777] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+00:00 +105 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate handles aggregate with no value
+ℹ️  [2026-01-13T17:00:56.550379] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+00:00 +106 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate calculates confidence based on difference
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validation complete: PASS | Metadata: {confidence: 100.0%, percentageDifference: 0.00%}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validation complete: PASS | Metadata: {confidence: 99.0%, percentageDifference: 1.00%}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validation complete: PASS | Metadata: {confidence: 95.0%, percentageDifference: 5.00%}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validation complete: PASS | Metadata: {confidence: 90.0%, percentageDifference: 10.00%}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.554402] [INFO] [AggregateReader] Validation complete: FAIL | Metadata: {confidence: 80.0%, percentageDifference: 20.00%}
+00:00 +107 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate adds notes for different difference levels
+ℹ️  [2026-01-13T17:00:56.558915] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.558915] [INFO] [AggregateReader] Validation complete: PASS | Metadata: {confidence: 98.0%, percentageDifference: 2.00%}
+ℹ️  [2026-01-13T17:00:56.558915] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.558915] [INFO] [AggregateReader] Validation complete: PASS | Metadata: {confidence: 93.0%, percentageDifference: 7.00%}
+ℹ️  [2026-01-13T17:00:56.558915] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+ℹ️  [2026-01-13T17:00:56.558915] [INFO] [AggregateReader] Validation complete: FAIL | Metadata: {confidence: 85.0%, percentageDifference: 15.00%}
+00:00 +108 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateReader validateAggregate handles validation errors gracefully
+ℹ️  [2026-01-13T17:00:56.562959] [INFO] [AggregateReader] Validating aggregate for steps | Metadata: {sampleSize: 100, threshold: 0.1}
+❌ [2026-01-13T17:00:56.564962] [ERROR] [AggregateReader] Validation failed
+  Error: Exception: Network error
+  Stack: #0      main.<anonymous closure>.<anonymous closure>.<anonymous closure> (file:///C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart:250:11)
+#1      AggregateReader.validateAggregate (package:health_sync_flutter/src/utils/aggregate_reader.dart:318:41)
+#2      main.<anonymous closure>.<anonymous closure> (file:///C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart:247:39)
+#3      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:215:19)
+<asynchronous suspension>
+#4      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:213:7)
+<asynchronous suspension>
+#5      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:258:9)
+<asynchronous suspension>
+
+00:00 +109 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateData Transparency deduplicationRate calculates correctly
+00:00 +110 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateData Transparency hasSignificantDeduplication detects high dedup rates
+00:00 +111 -8: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateData Transparency getTransparencyReport includes all details
+00:00 +111 -9: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateData Transparency getTransparencyReport includes all details [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\aggregate_reader_test.dart 313:7     main.<fn>.<fn>
+  
+00:00 +111 -9: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateData Transparency getTransparencyReport handles missing data
+00:00 +111 -10: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateData Transparency getTransparencyReport handles missing data [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\aggregate_reader_test.dart 331:7     main.<fn>.<fn>
+  
+00:00 +111 -10: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateValidation getReport generates comprehensive report
+00:00 +111 -11: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateValidation getReport generates comprehensive report [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\aggregate_reader_test.dart 362:7     main.<fn>.<fn>
+  
+00:00 +111 -11: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateValidation getReport shows inaccurate result
+00:00 +111 -12: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateValidation getReport shows inaccurate result [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\aggregate_reader_test.dart 386:7     main.<fn>.<fn>
+  
+00:00 +111 -12: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/aggregate_reader_test.dart: AggregateValidation toString provides summary
+00:00 +112 -12: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChanges returns initial sync when no token exists
+ℹ️  [2026-01-13T17:00:56.672197] [INFO] [ChangesAPI] Fetching changes for steps
+ℹ️  [2026-01-13T17:00:56.672197] [INFO] [ChangesAPI] No sync token found for steps, initializing...
+⚠️  [2026-01-13T17:00:56.672197] [WARNING] [ChangesAPI] Failed to get initial sync token for steps
+00:00 +112 -13: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChanges returns initial sync when no token exists [E]
+  Expected: <1>
+    Actual: <0>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\changes_api_test.dart 85:7           main.<fn>.<fn>
+  
+00:00 +112 -13: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChanges returns incremental changes with existing token
+ℹ️  [2026-01-13T17:00:56.702455] [INFO] [ChangesAPI] Fetching changes for steps
+❌ [2026-01-13T17:00:56.705044] [ERROR] [ChangesAPI] Failed to fetch changes for steps
+  Error: type 'Null' is not a subtype of type 'String' in type cast
+  Stack: #0      new RawHealthData.fromJson (package:health_sync_flutter/src/models/health_data.dart:71:46)
+#1      ChangesApi.getChanges.<anonymous closure> (package:health_sync_flutter/src/utils/changes_api.dart:225:30)
+#2      MappedListIterable.elementAt (dart:_internal/iterable.dart:425:31)
+#3      ListIterator.moveNext (dart:_internal/iterable.dart:354:26)
+#4      new _GrowableList._ofEfficientLengthIterable (dart:core-patch/growable_array.dart:189:27)
+#5      new _GrowableList.of (dart:core-patch/growable_array.dart:150:28)
+#6      new List.of (dart:core-patch/array_patch.dart:39:18)
+#7      ListIterable.toList (dart:_internal/iterable.dart:224:7)
+#8      ChangesApi.getChanges (package:health_sync_flutter/src/utils/changes_api.dart:226:10)
+<asynchronous suspension>
+#9      main.<anonymous closure>.<anonymous closure> (file:///C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart:107:22)
+<asynchronous suspension>
+#10     Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:215:9)
+<asynchronous suspension>
+#11     Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:213:7)
+<asynchronous suspension>
+#12     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:258:9)
+<asynchronous suspension>
+
+00:00 +112 -14: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChanges returns incremental changes with existing token [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\changes_api_test.dart 109:7          main.<fn>.<fn>
+  
+00:00 +112 -14: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChangesWithFallback falls back on invalid token error
+ℹ️  [2026-01-13T17:00:56.712569] [INFO] [ChangesAPI] Fetching changes for steps
+❌ [2026-01-13T17:00:56.712569] [ERROR] [ChangesAPI] Failed to fetch changes for steps
+  Error: PlatformException(INVALID_TOKEN, Token is invalid or expired, null, null)
+  Stack: #0      StandardMethodCodec.decodeEnvelope (package:flutter/src/services/message_codecs.dart:651:7)
+#1      MethodChannel._invokeMethod (package:flutter/src/services/platform_channel.dart:334:18)
+<asynchronous suspension>
+#2      ChangesApi.getChanges (package:health_sync_flutter/src/utils/changes_api.dart:212:22)
+<asynchronous suspension>
+#3      ChangesApi.getChangesWithFallback (package:health_sync_flutter/src/utils/changes_api.dart:53:22)
+<asynchronous suspension>
+#4      main.<anonymous closure>.<anonymous closure> (file:///C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart:132:22)
+<asynchronous suspension>
+#5      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:215:9)
+<asynchronous suspension>
+#6      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:213:7)
+<asynchronous suspension>
+#7      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:258:9)
+<asynchronous suspension>
+
+00:00 +112 -15: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChangesWithFallback falls back on invalid token error [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\changes_api_test.dart 146:7          main.<fn>.<fn>
+  
+00:00 +112 -15: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChangesWithFallback falls back on token not found error
+ℹ️  [2026-01-13T17:00:56.722759] [INFO] [ChangesAPI] Fetching changes for steps
+ℹ️  [2026-01-13T17:00:56.722759] [INFO] [ChangesAPI] No sync token found for steps, initializing...
+⚠️  [2026-01-13T17:00:56.722759] [WARNING] [ChangesAPI] Failed to get initial sync token for steps
+00:00 +112 -16: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChangesWithFallback falls back on token not found error [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\changes_api_test.dart 178:7          main.<fn>.<fn>
+  
+00:00 +112 -16: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChangesWithFallback succeeds without fallback when token is valid
+ℹ️  [2026-01-13T17:00:56.722759] [INFO] [ChangesAPI] Fetching changes for steps
+❌ [2026-01-13T17:00:56.729328] [ERROR] [ChangesAPI] Failed to fetch changes for steps
+  Error: type 'Null' is not a subtype of type 'String' in type cast
+  Stack: #0      new RawHealthData.fromJson (package:health_sync_flutter/src/models/health_data.dart:71:46)
+#1      ChangesApi.getChanges.<anonymous closure> (package:health_sync_flutter/src/utils/changes_api.dart:225:30)
+#2      MappedListIterable.elementAt (dart:_internal/iterable.dart:425:31)
+#3      ListIterator.moveNext (dart:_internal/iterable.dart:354:26)
+#4      new _GrowableList._ofEfficientLengthIterable (dart:core-patch/growable_array.dart:189:27)
+#5      new _GrowableList.of (dart:core-patch/growable_array.dart:150:28)
+#6      new List.of (dart:core-patch/array_patch.dart:39:18)
+#7      ListIterable.toList (dart:_internal/iterable.dart:224:7)
+#8      ChangesApi.getChanges (package:health_sync_flutter/src/utils/changes_api.dart:226:10)
+<asynchronous suspension>
+#9      ChangesApi.getChangesWithFallback (package:health_sync_flutter/src/utils/changes_api.dart:53:22)
+<asynchronous suspension>
+#10     main.<anonymous closure>.<anonymous closure> (file:///C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart:200:22)
+<asynchronous suspension>
+#11     Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:215:9)
+<asynchronous suspension>
+#12     Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:213:7)
+<asynchronous suspension>
+#13     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:258:9)
+<asynchronous suspension>
+
+00:00 +112 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi getChangesWithFallback succeeds without fallback when token is valid [E]
+  Expected: <true>
+    Actual: <false>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 474:18  expect
+  test\src\utils\changes_api_test.dart 208:7          main.<fn>.<fn>
+  
+00:00 +112 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi validateToken detects stale token (>30 days)
+00:00 +113 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi validateToken accepts recent token (<30 days)
+00:00 +114 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi validateToken handles missing token
+00:00 +115 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi validateToken handles missing creation time
+00:00 +116 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +116 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/changes_api_test.dart: ChangesApi resetSync clears token and resets state
+ℹ️  [2026-01-13T17:00:56.743121] [INFO] [ChangesAPI] Reset sync for steps
+00:00 +117 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +118 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +119 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +120 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +121 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +122 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +123 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +124 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +125 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter executes operation successfully without retry
+00:00 +126 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter retries on rate limit error and succeeds
+⚠️  [2026-01-13T17:00:56.764810] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/3) | Metadata: {retryDelay: 10ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:56.794516] [WARNING] [RateLimiter] Operation hit rate limit (attempt 2/3) | Metadata: {retryDelay: 10ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 3}
+00:00 +127 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter circuit breaker opens after consecutive failures
+❌ [2026-01-13T17:00:56.809218] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 2, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 1}
+❌ [2026-01-13T17:00:56.809218] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 2, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 2}
+❌ [2026-01-13T17:00:56.809218] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 2, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 3}
+❌ [2026-01-13T17:00:56.809218] [ERROR] [RateLimiter] Circuit breaker OPEN - refusing operation | Metadata: {operation: Unknown, consecutiveFailures: 3, advice: Too many failures detected. Check for architectural issues in your code. Circuit will reset after 0:05:00.000000 without failures.}
+00:00 +128 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter circuit breaker resets after duration
+❌ [2026-01-13T17:00:56.814241] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 1, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 1}
+❌ [2026-01-13T17:00:56.814241] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 1, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 2}
+❌ [2026-01-13T17:00:56.814241] [ERROR] [RateLimiter] Circuit breaker OPEN - refusing operation | Metadata: {operation: Unknown, consecutiveFailures: 2, advice: Too many failures detected. Check for architectural issues in your code. Circuit will reset after 0:00:00.100000 without failures.}
+ℹ️  [2026-01-13T17:00:56.975675] [INFO] [RateLimiter] Circuit breaker RESET - resuming operations
+00:01 +129 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter circuit breaker resets on successful operation
+❌ [2026-01-13T17:00:56.977254] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 1, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 1}
+❌ [2026-01-13T17:00:56.977254] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 1, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 2}
+❌ [2026-01-13T17:00:56.977254] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 1, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 1}
+❌ [2026-01-13T17:00:56.977254] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 1, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 2}
+00:01 +130 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter tracks statistics correctly
+⚠️  [2026-01-13T17:00:56.979267] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 10ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+❌ [2026-01-13T17:00:57.005540] [ERROR] [RateLimiter] Operation failed after 1 attempts | Metadata: {attempts: 1, maxRetries: 2, isRateLimitError: false, errorType: Unknown, errorPattern: None, consecutiveFailures: 1}
+00:01 +131 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter statistics rate limit hit rate calculation
+⚠️  [2026-01-13T17:00:57.006112] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 5ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.020374] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 5ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+00:01 +132 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter reset statistics works correctly
+00:01 +133 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter exponential backoff increases delay
+⚠️  [2026-01-13T17:00:57.039089] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/4) | Metadata: {retryDelay: 10ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.066175] [WARNING] [RateLimiter] Operation hit rate limit (attempt 2/4) | Metadata: {retryDelay: 20ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 3}
+⚠️  [2026-01-13T17:00:57.096282] [WARNING] [RateLimiter] Operation hit rate limit (attempt 3/4) | Metadata: {retryDelay: 40ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 4}
+00:01 +134 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimiter analyzeErrors returns diagnostic information
+⚠️  [2026-01-13T17:00:57.143677] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.156097] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.171580] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.186247] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.201713] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.217087] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.232630] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.247680] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.263118] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.281397] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.297215] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.311129] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.326321] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.341448] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.356584] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.371607] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.387583] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.402336] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.417434] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.432641] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.447795] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.462925] [WARNING] [RateLimiter] Rate limit hit rate is HIGH (100.0%) | Metadata: {stats: RateLimitStats{
+  Total Operations: 21
+  Successful: 21
+  Failed: 0 (rate limit: 0)
+  Success Rate: 100.0%
+  Rate Limit Hits: 21
+  Hit Rate: 100.0%
+  Avg Retries: 1.00
+  Avg Duration: 15.1ms
+  Last Hit: 2026-01-13 17:00:57.462321
+  Healthy: ✗
+}, advice: This is a symptom of architectural issues. Investigate:
+- Are you calling APIs in loops?
+- Can you batch operations?
+- Is there a logic error causing excessive calls?}
+⚠️  [2026-01-13T17:00:57.462925] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.462925] [WARNING] [RateLimiter] Rate limit hit rate is HIGH (100.0%) | Metadata: {stats: RateLimitStats{
+  Total Operations: 22
+  Successful: 22
+  Failed: 0 (rate limit: 0)
+  Success Rate: 100.0%
+  Rate Limit Hits: 22
+  Hit Rate: 100.0%
+  Avg Retries: 1.00
+  Avg Duration: 14.5ms
+  Last Hit: 2026-01-13 17:00:57.462925
+  Healthy: ✗
+}, advice: This is a symptom of architectural issues. Investigate:
+- Are you calling APIs in loops?
+- Can you batch operations?
+- Is there a logic error causing excessive calls?}
+⚠️  [2026-01-13T17:00:57.462925] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.462925] [WARNING] [RateLimiter] Rate limit hit rate is HIGH (100.0%) | Metadata: {stats: RateLimitStats{
+  Total Operations: 23
+  Successful: 23
+  Failed: 0 (rate limit: 0)
+  Success Rate: 100.0%
+  Rate Limit Hits: 23
+  Hit Rate: 100.0%
+  Avg Retries: 1.00
+  Avg Duration: 13.8ms
+  Last Hit: 2026-01-13 17:00:57.462925
+  Healthy: ✗
+}, advice: This is a symptom of architectural issues. Investigate:
+- Are you calling APIs in loops?
+- Can you batch operations?
+- Is there a logic error causing excessive calls?}
+⚠️  [2026-01-13T17:00:57.462925] [WARNING] [RateLimiter] Operation hit rate limit (attempt 1/2) | Metadata: {retryDelay: 1ms, errorDetails: {type: Unknown, pattern: None, advice: , rawError: Exception: RateLimitExceededException}, nextAttempt: 2}
+⚠️  [2026-01-13T17:00:57.462925] [WARNING] [RateLimiter] Rate limit hit rate is HIGH (100.0%) | Metadata: {stats: RateLimitStats{
+00:01 +135 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: CircuitBreakerOpenException has descriptive message
+00:01 +136 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimitStats calculates success rate correctly
+00:01 +137 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimitStats calculates rate limit hit rate correctly
+00:01 +138 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimitStats tracks last rate limit hit time
+00:01 +139 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimitStats reset clears all statistics
+00:01 +140 -17: C:/SDK_StandardizingHealthDataV0/packages/flutter/health_sync_flutter/test/src/utils/rate_limiter_test.dart: RateLimitStats getReport returns formatted statistics
+00:01 +141 -17: Some tests failed.

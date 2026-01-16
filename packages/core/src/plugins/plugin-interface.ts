@@ -1,0 +1,533 @@
+/**
+ * Plugin Interface
+ *
+ * This module defines the contract that all health data plugins must implement.
+ * Plugins are the bridge between the HealthSync SDK and specific health data sources.
+ *
+ * @module plugins/plugin-interface
+ */
+
+import { DataType, HealthSource, UnifiedHealthData } from '../models/unified-data';
+
+/**
+ * Plugin configuration options
+ *
+ * @interface PluginConfig
+ */
+export interface PluginConfig {
+  /** API base URL (for cloud-based plugins) */
+  apiBaseUrl?: string;
+
+  /** Client ID for OAuth (if applicable) */
+  clientId?: string;
+
+  /** Client secret for OAuth (if applicable) */
+  clientSecret?: string;
+
+  /** Redirect URI for OAuth flow */
+  redirectUri?: string;
+
+  /** API version to use */
+  apiVersion?: string;
+
+  /** Custom headers to include in API requests */
+  customHeaders?: Record<string, string>;
+
+  /** Timeout for API requests in milliseconds */
+  timeout?: number;
+
+  /** Enable debug logging */
+  debug?: boolean;
+
+  /** Additional plugin-specific configuration */
+  custom?: Record<string, unknown>;
+}
+
+/**
+ * Result of a connection attempt
+ *
+ * @interface ConnectionResult
+ */
+export interface ConnectionResult {
+  /** Whether the connection was successful */
+  success: boolean;
+
+  /** Human-readable message describing the result */
+  message: string;
+
+  /** Error details if connection failed */
+  error?: Error;
+
+  /** Additional metadata about the connection */
+  metadata?: {
+    /** User ID from the health platform */
+    userId?: string;
+
+    /** Username or display name */
+    username?: string;
+
+    /** Account creation date */
+    createdAt?: string;
+
+    /** Last sync timestamp */
+    lastSync?: string;
+
+    /** Available data types for this connection */
+    availableDataTypes?: DataType[];
+
+    /** Additional platform-specific data */
+    custom?: Record<string, unknown>;
+  };
+}
+
+/**
+ * Connection status enumeration
+ *
+ * @enum {string}
+ */
+export enum ConnectionStatus {
+  /** Plugin is connected and ready */
+  CONNECTED = 'connected',
+
+  /** Plugin is disconnected */
+  DISCONNECTED = 'disconnected',
+
+  /** Plugin is connecting */
+  CONNECTING = 'connecting',
+
+  /** Plugin is disconnecting */
+  DISCONNECTING = 'disconnecting',
+
+  /** Connection is in error state */
+  ERROR = 'error',
+
+  /** Connection requires re-authentication */
+  REQUIRES_AUTH = 'requires_auth',
+}
+
+/**
+ * Query parameters for fetching health data
+ *
+ * @interface DataQuery
+ */
+export interface DataQuery {
+  /** Type of data to fetch */
+  dataType: DataType;
+
+  /** Start of date range (ISO 8601 format) */
+  startDate: string;
+
+  /** End of date range (ISO 8601 format) */
+  endDate: string;
+
+  /** Maximum number of records to return */
+  limit?: number;
+
+  /** Offset for pagination */
+  offset?: number;
+
+  /** Sort order (asc or desc) */
+  sortOrder?: 'asc' | 'desc';
+
+  /** Additional query parameters */
+  filters?: Record<string, unknown>;
+}
+
+/**
+ * Raw health data from the source platform
+ * This is the platform-specific format before normalization
+ *
+ * @interface RawHealthData
+ */
+export interface RawHealthData {
+  /** Original data type identifier from the source */
+  sourceDataType: string;
+
+  /** ISO timestamp of the measurement */
+  timestamp: string;
+
+  /** End timestamp for range-based data */
+  endTimestamp?: string;
+
+  /** Raw data payload in platform-specific format */
+  raw: Record<string, unknown>;
+
+  /** Source platform identifier */
+  source: HealthSource;
+
+  /** Original record ID from the source platform */
+  sourceId?: string;
+}
+
+/**
+ * Subscription to data updates
+ *
+ * @interface Subscription
+ */
+export interface Subscription {
+  /** Unique identifier for this subscription */
+  id: string;
+
+  /** Cancel the subscription */
+  unsubscribe: () => Promise<void>;
+
+  /** Whether the subscription is active */
+  isActive: () => boolean;
+}
+
+/**
+ * Callback function for data updates
+ *
+ * @callback UpdateCallback
+ * @param {UnifiedHealthData[]} data - Array of new/updated health data
+ * @returns {void | Promise<void>}
+ */
+export type UpdateCallback = (data: UnifiedHealthData[]) => void | Promise<void>;
+
+/**
+ * Error action to take when an error occurs
+ *
+ * @enum {string}
+ */
+export enum ErrorAction {
+  /** Retry the operation with exponential backoff */
+  RETRY = 'retry',
+
+  /** Fail immediately, do not retry */
+  FAIL = 'fail',
+
+  /** Queue the operation for later */
+  QUEUE = 'queue',
+
+  /** Request user re-authentication */
+  REAUTH = 'reauth',
+
+  /** Ignore the error and continue */
+  IGNORE = 'ignore',
+}
+
+/**
+ * Plugin metadata information
+ *
+ * @interface PluginInfo
+ */
+export interface PluginInfo {
+  /** Unique plugin identifier */
+  id: string;
+
+  /** Human-readable plugin name */
+  name: string;
+
+  /** Semantic version */
+  version: string;
+
+  /** Plugin description */
+  description?: string;
+
+  /** Plugin author/maintainer */
+  author?: string;
+
+  /** Plugin homepage URL */
+  homepage?: string;
+
+  /** Data types supported by this plugin */
+  supportedDataTypes: readonly DataType[];
+
+  /** Whether plugin requires user authentication */
+  requiresAuthentication: boolean;
+
+  /** Whether plugin uses cloud APIs (true) or local data (false) */
+  isCloudBased: boolean;
+
+  /** Supported platforms (ios, android, web) */
+  supportedPlatforms?: readonly ('ios' | 'android' | 'web')[];
+}
+
+/**
+ * Core plugin interface that all health data plugins must implement
+ *
+ * This interface defines the contract for plugin lifecycle, connection management,
+ * data operations, and error handling.
+ *
+ * @interface IHealthDataPlugin
+ */
+export interface IHealthDataPlugin {
+  // ============================================================================
+  // Metadata Properties
+  // ============================================================================
+
+  /** Unique identifier for this plugin (e.g., 'fitbit', 'health-connect') */
+  readonly id: string;
+
+  /** Human-readable name (e.g., 'Fitbit', 'Health Connect') */
+  readonly name: string;
+
+  /** Semantic version (e.g., '1.0.0') */
+  readonly version: string;
+
+  /** Array of data types this plugin can provide */
+  readonly supportedDataTypes: readonly DataType[];
+
+  /** Whether this plugin requires user authentication/authorization */
+  readonly requiresAuthentication: boolean;
+
+  /** Whether this plugin uses cloud APIs (true) or device-local data (false) */
+  readonly isCloudBased: boolean;
+
+  // ============================================================================
+  // Lifecycle Methods
+  // ============================================================================
+
+  /**
+   * Initialize the plugin with configuration
+   *
+   * Called once when the plugin is registered with the SDK.
+   * Use this method to set up any required resources, validate configuration,
+   * and prepare the plugin for use.
+   *
+   * @param {PluginConfig} config - Configuration object for this plugin
+   * @returns {Promise<void>} Resolves when initialization is complete
+   * @throws {Error} If initialization fails
+   */
+  initialize(config: PluginConfig): Promise<void>;
+
+  /**
+   * Clean up plugin resources
+   *
+   * Called when the plugin is being removed or the SDK is shutting down.
+   * Use this method to close connections, cancel subscriptions, and free resources.
+   *
+   * @returns {Promise<void>} Resolves when cleanup is complete
+   */
+  dispose(): Promise<void>;
+
+  // ============================================================================
+  // Connection Management
+  // ============================================================================
+
+  /**
+   * Establish connection to the health data source
+   *
+   * For cloud-based plugins, this typically involves OAuth flow.
+   * For local plugins, this involves requesting device permissions.
+   *
+   * @returns {Promise<ConnectionResult>} Result of the connection attempt
+   * @throws {Error} If connection fails critically
+   */
+  connect(): Promise<ConnectionResult>;
+
+  /**
+   * Disconnect from the health data source
+   *
+   * Revoke tokens, clear credentials, and clean up connection state.
+   *
+   * @returns {Promise<void>} Resolves when disconnection is complete
+   */
+  disconnect(): Promise<void>;
+
+  /**
+   * Check if the plugin is currently connected
+   *
+   * @returns {Promise<boolean>} True if connected and ready to fetch data
+   */
+  isConnected(): Promise<boolean>;
+
+  /**
+   * Get the current connection status
+   *
+   * @returns {Promise<ConnectionStatus>} Current connection state
+   */
+  getConnectionStatus(): Promise<ConnectionStatus>;
+
+  // ============================================================================
+  // Data Operations
+  // ============================================================================
+
+  /**
+   * Fetch health data from the source
+   *
+   * Returns raw, platform-specific data that will be normalized by the SDK.
+   * This method should handle pagination, rate limiting, and retries internally.
+   *
+   * @param {DataQuery} query - Query parameters specifying what data to fetch
+   * @returns {Promise<RawHealthData[]>} Array of raw health data records
+   * @throws {Error} If the query fails
+   */
+  fetchData(query: DataQuery): Promise<RawHealthData[]>;
+
+  /**
+   * Subscribe to real-time data updates
+   *
+   * For cloud-based plugins, this may use webhooks or websockets.
+   * For local plugins, this may use platform observers/listeners.
+   *
+   * @param {UpdateCallback} callback - Function to call when new data arrives
+   * @returns {Promise<Subscription>} Subscription object to manage the listener
+   */
+  subscribeToUpdates(callback: UpdateCallback): Promise<Subscription>;
+
+  // ============================================================================
+  // Error Handling
+  // ============================================================================
+
+  /**
+   * Determine how to handle an error
+   *
+   * Plugins can implement custom error handling logic to decide whether
+   * errors should be retried, queued, or require re-authentication.
+   *
+   * @param {Error} error - The error that occurred
+   * @returns {ErrorAction} Recommended action to handle this error
+   */
+  handleError(error: Error): ErrorAction;
+
+  // ============================================================================
+  // Optional Methods
+  // ============================================================================
+
+  /**
+   * Get plugin metadata and capabilities
+   *
+   * @returns {Promise<PluginInfo>} Plugin information object
+   */
+  getInfo?(): Promise<PluginInfo>;
+
+  /**
+   * Validate that the plugin can operate in the current environment
+   *
+   * @returns {Promise<boolean>} True if the environment is supported
+   */
+  isSupported?(): Promise<boolean>;
+
+  /**
+   * Refresh authentication tokens (for OAuth plugins)
+   *
+   * @returns {Promise<boolean>} True if refresh was successful
+   */
+  refreshAuth?(): Promise<boolean>;
+
+  /**
+   * Get rate limit status (for cloud-based plugins)
+   *
+   * @returns {Promise<RateLimitInfo>} Current rate limit information
+   */
+  getRateLimitStatus?(): Promise<RateLimitInfo>;
+}
+
+/**
+ * Rate limit information for cloud-based APIs
+ *
+ * @interface RateLimitInfo
+ */
+export interface RateLimitInfo {
+  /** Maximum requests allowed in the time window */
+  limit: number;
+
+  /** Remaining requests in current window */
+  remaining: number;
+
+  /** Timestamp when the rate limit resets (ISO 8601) */
+  resetAt: string;
+
+  /** Time until reset in seconds */
+  resetInSeconds: number;
+}
+
+/**
+ * Abstract base class providing common plugin functionality
+ *
+ * Plugin developers can extend this class to inherit common patterns
+ * like event emitting, state management, and error handling.
+ *
+ * @abstract
+ * @class BasePlugin
+ * @implements {IHealthDataPlugin}
+ */
+export abstract class BasePlugin implements IHealthDataPlugin {
+  abstract readonly id: string;
+  abstract readonly name: string;
+  abstract readonly version: string;
+  abstract readonly supportedDataTypes: readonly DataType[];
+  abstract readonly requiresAuthentication: boolean;
+  abstract readonly isCloudBased: boolean;
+
+  protected config: PluginConfig = {};
+  protected connectionStatus: ConnectionStatus = ConnectionStatus.DISCONNECTED;
+
+  abstract initialize(config: PluginConfig): Promise<void>;
+  abstract dispose(): Promise<void>;
+  abstract connect(): Promise<ConnectionResult>;
+  abstract disconnect(): Promise<void>;
+  abstract fetchData(query: DataQuery): Promise<RawHealthData[]>;
+  abstract subscribeToUpdates(callback: UpdateCallback): Promise<Subscription>;
+
+  /**
+   * Check if plugin is connected
+   */
+  async isConnected(): Promise<boolean> {
+    return this.connectionStatus === ConnectionStatus.CONNECTED;
+  }
+
+  /**
+   * Get connection status
+   */
+  async getConnectionStatus(): Promise<ConnectionStatus> {
+    return this.connectionStatus;
+  }
+
+  /**
+   * Default error handling strategy
+   */
+  handleError(error: Error): ErrorAction {
+    const errorMessage = error.message.toLowerCase();
+
+    // Authentication errors
+    if (
+      errorMessage.includes('unauthorized') ||
+      errorMessage.includes('auth') ||
+      errorMessage.includes('401')
+    ) {
+      return ErrorAction.REAUTH;
+    }
+
+    // Rate limit errors
+    if (errorMessage.includes('rate limit') || errorMessage.includes('429')) {
+      return ErrorAction.QUEUE;
+    }
+
+    // Transient network errors
+    if (
+      errorMessage.includes('timeout') ||
+      errorMessage.includes('network') ||
+      errorMessage.includes('503')
+    ) {
+      return ErrorAction.RETRY;
+    }
+
+    // Permanent errors
+    if (
+      errorMessage.includes('400') ||
+      errorMessage.includes('404') ||
+      errorMessage.includes('permission denied')
+    ) {
+      return ErrorAction.FAIL;
+    }
+
+    // Default to retry for unknown errors
+    return ErrorAction.RETRY;
+  }
+
+  /**
+   * Get plugin info
+   */
+  async getInfo(): Promise<PluginInfo> {
+    return {
+      id: this.id,
+      name: this.name,
+      version: this.version,
+      supportedDataTypes: this.supportedDataTypes,
+      requiresAuthentication: this.requiresAuthentication,
+      isCloudBased: this.isCloudBased,
+    };
+  }
+}

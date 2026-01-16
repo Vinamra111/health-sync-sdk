@@ -1,0 +1,45 @@
+name: health_sync_flutter
+description: Flutter plugin for HealthSync SDK - Universal health data integration with Health Connect support
+version: 1.0.0
+homepage: https://github.com/Vinamra111/health-sync-sdk/tree/main/packages/flutter/health_sync_flutter
+repository: https://github.com/Vinamra111/health-sync-sdk
+issue_tracker: https://github.com/Vinamra111/health-sync-sdk/issues
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.0
+
+  # Fitbit Plugin Dependencies
+  http: ^1.1.0
+  url_launcher: ^6.2.1
+  crypto: ^3.0.3
+  flutter_secure_storage: ^9.0.0
+
+  # Data Caching Dependencies
+  sqflite: ^2.3.0
+  path: ^1.8.3
+
+  # Sync Token Management
+  shared_preferences: ^2.2.0
+
+  # Background Sync
+  workmanager: ^0.5.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.healthsync.flutter
+        pluginClass: HealthSyncFlutterPlugin
+      ios:
+        pluginClass: HealthSyncFlutterPlugin

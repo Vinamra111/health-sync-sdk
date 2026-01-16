@@ -1,0 +1,92 @@
+═══════════════════════════════════════════════════════════════
+  COMMAND LINE BUILD INSTRUCTIONS
+═══════════════════════════════════════════════════════════════
+
+If batch files are not working, use these commands directly:
+
+STEP 1: Open Command Prompt
+────────────────────────────
+Press: Windows Key + R
+Type: cmd
+Press: Enter
+
+
+STEP 2: Copy and paste these commands ONE BY ONE:
+─────────────────────────────────────────────────
+
+cd C:\SDK_StandardizingHealthDataV0\test-app
+
+C:\flutter\bin\flutter.bat clean
+
+C:\flutter\bin\flutter.bat pub get
+
+C:\flutter\bin\flutter.bat build apk --debug
+
+copy build\app\outputs\flutter-apk\app-debug.apk %USERPROFILE%\Desktop\HealthSync-Test-App.apk
+
+explorer %USERPROFILE%\Desktop
+
+
+═══════════════════════════════════════════════════════════════
+
+WHAT EACH COMMAND DOES:
+────────────────────────
+
+1. cd C:\SDK_StandardizingHealthDataV0\test-app
+   → Goes to project folder
+
+2. C:\flutter\bin\flutter.bat clean
+   → Cleans old build files
+
+3. C:\flutter\bin\flutter.bat pub get
+   → Gets dependencies
+
+4. C:\flutter\bin\flutter.bat build apk --debug
+   → Builds the APK (takes 2-3 minutes)
+
+5. copy build\app\outputs\flutter-apk\app-debug.apk %USERPROFILE%\Desktop\HealthSync-Test-App.apk
+   → Copies APK to Desktop
+
+6. explorer %USERPROFILE%\Desktop
+   → Opens Desktop folder
+
+
+═══════════════════════════════════════════════════════════════
+
+EXPECTED OUTPUT:
+────────────────
+
+After step 2 (clean):
+  Deleting build...
+  Deleting .dart_tool...
+
+After step 3 (pub get):
+  Got dependencies!
+
+After step 4 (build):
+  Running Gradle task 'assembleDebug'...
+  ✓ Built build\app\outputs\flutter-apk\app-debug.apk
+
+After step 5 (copy):
+  1 file(s) copied.
+
+
+═══════════════════════════════════════════════════════════════
+
+IF YOU GET ERRORS:
+──────────────────
+
+Error: "flutter: command not found"
+→ Flutter not installed correctly
+→ Use full path: C:\flutter\bin\flutter.bat
+
+Error: "The system cannot find the path specified"
+→ Check Flutter is at C:\flutter
+→ Or adjust path to your Flutter location
+
+Error: "Build failed"
+→ Check if you're on mobile hotspot
+→ Check error message above the failure
+
+
+═══════════════════════════════════════════════════════════════

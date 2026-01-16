@@ -1,0 +1,47 @@
+# Source files (only include built dist/)
+src/
+*.ts
+!*.d.ts
+
+# Build tools
+tsconfig.json
+tsconfig.*.json
+.eslintrc
+.eslintrc.js
+.prettierrc
+
+# Development
+node_modules/
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Android build artifacts (keep android/ source)
+android/build/
+android/.gradle/
+android/local.properties
+
+# Example and test apps
+example/
+__tests__/
+
+# Documentation
+docs/
+
+# Misc
+*.old.md
+.editorconfig

@@ -1,0 +1,45 @@
+{
+  "name": "@healthsync/react-native",
+  "version": "1.0.0",
+  "description": "React Native Health Connect integration for HealthSync SDK",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "health",
+    "healthconnect",
+    "react-native",
+    "android",
+    "fitness",
+    "health-data"
+  ],
+  "author": "HCL Healthcare Product Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vinamra111/health-sync-sdk.git",
+    "directory": "packages/react-native"
+  },
+  "bugs": {
+    "url": "https://github.com/Vinamra111/health-sync-sdk/issues"
+  },
+  "homepage": "https://github.com/Vinamra111/health-sync-sdk/tree/main/packages/react-native#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-native": ">=0.60.0"
+  },
+  "dependencies": {
+    "@healthsync/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-native": "^0.70.0",
+    "typescript": "^5.0.0"
+  },
+  "react-native": "src/index.ts"
+}

@@ -1,0 +1,52 @@
+# Source files (only include built dist/)
+src/
+tests/
+*.ts
+!*.d.ts
+
+# Test and coverage
+coverage/
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+.nyc_output/
+jest.config.js
+
+# Build tools
+tsconfig.json
+tsconfig.*.json
+.eslintrc
+.eslintrc.js
+.eslintrc.json
+.prettierrc
+.prettierrc.js
+.prettierrc.json
+
+# Development
+node_modules/
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+circle.yml
+
+# Documentation (keep README and LICENSE)
+docs/
+
+# Misc
+*.old.md
+.editorconfig

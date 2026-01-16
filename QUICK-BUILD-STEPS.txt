@@ -1,0 +1,51 @@
+═══════════════════════════════════════════════════════════════
+  HEALTHSYNC APK BUILD - QUICK STEPS
+═══════════════════════════════════════════════════════════════
+
+1. ENABLE HOTSPOT ON PHONE
+   ────────────────────────
+   Settings → Hotspot → Turn ON
+   Note the password
+
+2. CONNECT PC TO HOTSPOT
+   ─────────────────────
+   Click Wi-Fi icon → Find phone's hotspot → Enter password
+
+3. RUN BUILD SCRIPT
+   ────────────────
+   Double-click: BUILD-WITH-HOTSPOT.bat
+
+4. WAIT 2-3 MINUTES
+   ────────────────
+   Script will:
+   ✓ Clean project
+   ✓ Get dependencies
+   ✓ Build APK
+   ✓ Copy to Desktop
+
+5. DONE!
+   ─────
+   APK will be on Desktop: HealthSync-Test-App.apk
+
+6. DISCONNECT HOTSPOT
+   ──────────────────
+   Reconnect to regular Wi-Fi
+
+7. SEND VIA WHATSAPP
+   ─────────────────
+   WhatsApp PC → Message yourself → Attach APK → Send
+
+8. INSTALL ON PHONE
+   ────────────────
+   Download → Tap APK → Install → Open
+
+═══════════════════════════════════════════════════════════════
+
+TOTAL TIME: ~4 minutes
+
+TROUBLESHOOTING:
+  - If build fails: Check you're still on hotspot
+  - If SSL error: Disable antivirus temporarily
+  - If slow: Normal, be patient!
+
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,460 @@
+/**
+ * Data Validator
+ *
+ * Provides validation utilities for health data to ensure data integrity
+ * and catch invalid or suspicious values.
+ *
+ * @module normalizer/validator
+ */
+
+import { DataType } from '../models/unified-data';
+import { ValidationError } from '../types/config';
+
+/**
+ * Validation result
+ *
+ * @interface ValidationResult
+ */
+export interface ValidationResult {
+  /** Whether validation passed */
+  valid: boolean;
+
+  /** Validation errors if any */
+  errors: string[];
+
+  /** Warnings (non-fatal issues) */
+  warnings: string[];
+}
+
+/**
+ * Data Validator
+ *
+ * Validates health data values for correctness and plausibility.
+ *
+ * @class DataValidator
+ */
+export class DataValidator {
+  /**
+   * Validate steps data
+   *
+   * @param {number} count - Step count
+   * @returns {ValidationResult} Validation result
+   */
+  static validateSteps(count: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (count < 0) {
+      errors.push('Step count cannot be negative');
+    }
+
+    if (count > 100000) {
+      warnings.push('Step count unusually high (>100,000 steps)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate heart rate data
+   *
+   * @param {number} bpm - Beats per minute
+   * @returns {ValidationResult} Validation result
+   */
+  static validateHeartRate(bpm: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (bpm < 0) {
+      errors.push('Heart rate cannot be negative');
+    }
+
+    if (bpm < 30) {
+      warnings.push('Heart rate unusually low (<30 bpm)');
+    }
+
+    if (bpm > 220) {
+      warnings.push('Heart rate unusually high (>220 bpm)');
+    }
+
+    if (bpm > 250) {
+      errors.push('Heart rate exceeds maximum plausible value (>250 bpm)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate blood pressure data
+   *
+   * @param {number} systolic - Systolic pressure
+   * @param {number} diastolic - Diastolic pressure
+   * @returns {ValidationResult} Validation result
+   */
+  static validateBloodPressure(systolic: number, diastolic: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (systolic < 0 || diastolic < 0) {
+      errors.push('Blood pressure cannot be negative');
+    }
+
+    if (systolic < diastolic) {
+      errors.push('Systolic pressure must be greater than diastolic pressure');
+    }
+
+    if (systolic < 70 || systolic > 200) {
+      warnings.push(`Systolic pressure out of normal range: ${systolic} mmHg`);
+    }
+
+    if (diastolic < 40 || diastolic > 130) {
+      warnings.push(`Diastolic pressure out of normal range: ${diastolic} mmHg`);
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate blood oxygen (SpO2) data
+   *
+   * @param {number} percentage - Oxygen saturation percentage
+   * @returns {ValidationResult} Validation result
+   */
+  static validateBloodOxygen(percentage: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (percentage < 0 || percentage > 100) {
+      errors.push('Blood oxygen percentage must be between 0 and 100');
+    }
+
+    if (percentage < 70) {
+      warnings.push('Blood oxygen critically low (<70%)');
+    }
+
+    if (percentage < 90) {
+      warnings.push('Blood oxygen below normal range (<90%)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate body temperature
+   *
+   * @param {number} celsius - Temperature in Celsius
+   * @returns {ValidationResult} Validation result
+   */
+  static validateTemperature(celsius: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (celsius < 30 || celsius > 45) {
+      errors.push('Temperature out of plausible range (30-45°C)');
+    }
+
+    if (celsius < 35) {
+      warnings.push('Temperature below normal (hypothermia risk)');
+    }
+
+    if (celsius > 39) {
+      warnings.push('Temperature above normal (fever)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate body weight
+   *
+   * @param {number} kg - Weight in kilograms
+   * @returns {ValidationResult} Validation result
+   */
+  static validateWeight(kg: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (kg <= 0) {
+      errors.push('Weight must be positive');
+    }
+
+    if (kg < 20) {
+      warnings.push('Weight unusually low (<20 kg)');
+    }
+
+    if (kg > 300) {
+      warnings.push('Weight unusually high (>300 kg)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate sleep duration
+   *
+   * @param {number} minutes - Sleep duration in minutes
+   * @returns {ValidationResult} Validation result
+   */
+  static validateSleepDuration(minutes: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (minutes < 0) {
+      errors.push('Sleep duration cannot be negative');
+    }
+
+    if (minutes > 24 * 60) {
+      errors.push('Sleep duration cannot exceed 24 hours');
+    }
+
+    if (minutes < 60) {
+      warnings.push('Sleep duration unusually short (<1 hour)');
+    }
+
+    if (minutes > 16 * 60) {
+      warnings.push('Sleep duration unusually long (>16 hours)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate sleep efficiency
+   *
+   * @param {number} percentage - Sleep efficiency percentage
+   * @returns {ValidationResult} Validation result
+   */
+  static validateSleepEfficiency(percentage: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (percentage < 0 || percentage > 100) {
+      errors.push('Sleep efficiency must be between 0 and 100');
+    }
+
+    if (percentage < 50) {
+      warnings.push('Sleep efficiency low (<50%)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate distance
+   *
+   * @param {number} meters - Distance in meters
+   * @returns {ValidationResult} Validation result
+   */
+  static validateDistance(meters: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (meters < 0) {
+      errors.push('Distance cannot be negative');
+    }
+
+    if (meters > 100000) {
+      warnings.push('Distance unusually high (>100 km)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate calories
+   *
+   * @param {number} calories - Calories burned
+   * @returns {ValidationResult} Validation result
+   */
+  static validateCalories(calories: number): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    if (calories < 0) {
+      errors.push('Calories cannot be negative');
+    }
+
+    if (calories > 10000) {
+      warnings.push('Calories unusually high (>10,000 kcal)');
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate timestamp
+   *
+   * @param {string} timestamp - ISO 8601 timestamp
+   * @returns {ValidationResult} Validation result
+   */
+  static validateTimestamp(timestamp: string): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    try {
+      const date = new Date(timestamp);
+
+      if (isNaN(date.getTime())) {
+        errors.push('Invalid timestamp format');
+        return { valid: false, errors, warnings };
+      }
+
+      const now = Date.now();
+      const diff = now - date.getTime();
+
+      // Check if timestamp is in the future
+      if (diff < 0) {
+        warnings.push('Timestamp is in the future');
+      }
+
+      // Check if timestamp is too old (>10 years)
+      if (diff > 10 * 365 * 24 * 60 * 60 * 1000) {
+        warnings.push('Timestamp is more than 10 years old');
+      }
+    } catch (error) {
+      errors.push(`Invalid timestamp: ${(error as Error).message}`);
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate date range
+   *
+   * @param {string} startDate - Start date
+   * @param {string} endDate - End date
+   * @returns {ValidationResult} Validation result
+   */
+  static validateDateRange(startDate: string, endDate: string): ValidationResult {
+    const errors: string[] = [];
+    const warnings: string[] = [];
+
+    const startResult = this.validateTimestamp(startDate);
+    const endResult = this.validateTimestamp(endDate);
+
+    errors.push(...startResult.errors, ...endResult.errors);
+    warnings.push(...startResult.warnings, ...endResult.warnings);
+
+    if (startResult.valid && endResult.valid) {
+      const start = new Date(startDate).getTime();
+      const end = new Date(endDate).getTime();
+
+      if (end < start) {
+        errors.push('End date must be after start date');
+      }
+
+      const diff = end - start;
+      if (diff > 365 * 24 * 60 * 60 * 1000) {
+        warnings.push('Date range exceeds 1 year');
+      }
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      warnings,
+    };
+  }
+
+  /**
+   * Validate data by type
+   *
+   * @param {DataType} dataType - Type of data
+   * @param {unknown} value - Value to validate
+   * @returns {ValidationResult} Validation result
+   * @throws {ValidationError} If data type is not supported
+   */
+  static validateByType(dataType: DataType, value: unknown): ValidationResult {
+    switch (dataType) {
+      case DataType.STEPS:
+        return this.validateSteps(value as number);
+
+      case DataType.HEART_RATE:
+      case DataType.RESTING_HEART_RATE:
+        return this.validateHeartRate(value as number);
+
+      case DataType.BLOOD_OXYGEN:
+        return this.validateBloodOxygen(value as number);
+
+      case DataType.WEIGHT:
+        return this.validateWeight(value as number);
+
+      case DataType.DISTANCE:
+        return this.validateDistance(value as number);
+
+      case DataType.CALORIES:
+        return this.validateCalories(value as number);
+
+      default:
+        return {
+          valid: true,
+          errors: [],
+          warnings: [],
+        };
+    }
+  }
+
+  /**
+   * Assert validation result
+   *
+   * Throws a ValidationError if validation fails.
+   *
+   * @param {ValidationResult} result - Validation result
+   * @param {string} field - Field name for error message
+   * @throws {ValidationError} If validation failed
+   * @returns {void}
+   */
+  static assertValid(result: ValidationResult, field: string): void {
+    if (!result.valid) {
+      throw new ValidationError(
+        `Validation failed for ${field}: ${result.errors.join(', ')}`,
+        [field],
+        { errors: result.errors, warnings: result.warnings }
+      );
+    }
+  }
+}

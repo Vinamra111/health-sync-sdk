@@ -1,0 +1,65 @@
+group 'com.healthsync.flutter'
+version '1.0.0'
+
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace 'com.healthsync.flutter'
+    compileSdk 36
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 26
+        targetSdkVersion 36
+    }
+
+    dependencies {
+        // Health Connect SDK - using 1.1.0-alpha11 (compatible with AGP 8.1.0)
+        // Latest alpha version compatible with current Android Gradle Plugin
+        implementation 'androidx.health.connect:connect-client:1.1.0-alpha11'
+
+        // Kotlin coroutines
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+
+        // CRITICAL: Required for registerForActivityResult to work properly
+        // Versions match successful "health" and "health_connector" plugins
+        implementation 'androidx.activity:activity-ktx:1.8.2'
+        implementation 'androidx.fragment:fragment-ktx:1.8.9'
+
+        // AppCompat for compatibility
+        implementation 'androidx.appcompat:appcompat:1.7.0'
+    }
+}
