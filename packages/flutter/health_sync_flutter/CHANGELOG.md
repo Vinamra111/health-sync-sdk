@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-01-16
+
+### Changed
+- Updated authorship to HCL Healthcare Product Team
+- Updated repository URLs to https://github.com/Vinamra111/health-sync-sdk
+- Made README more concise (reduced from 699 to 180 lines)
+- Updated all documentation links
+
+### Fixed
+- Fixed code analysis warnings (String.repeat to String * operator)
+- Fixed const constructor issues with DateTime.now()
+
 ## [1.0.0] - 2025-01-14
 
 ### Added
